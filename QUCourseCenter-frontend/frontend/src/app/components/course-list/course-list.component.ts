@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../model/course';
-import { courseService } from '../service/course-service.service';
+import { Course } from '../../model/course';
+import { courseService } from '../../service/course-service.service';
 import { CommonModule } from "@angular/common";
 
 
