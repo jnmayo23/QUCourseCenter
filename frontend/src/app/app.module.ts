@@ -15,6 +15,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { CourseCatalogPageComponent } from './components/course-catalog-page/course-catalog-page.component';
 import { MessagingCenterPageComponent } from './components/messaging-center-page/messaging-center-page.component';
 import { AdviseesPageComponent } from './components/advisees-page/advisees-page.component';
+import { CourseSearchFormComponent } from './components/course-catalog-page/course-search-form/course-search-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdviseesPageComponent } from './components/advisees-page/advisees-page.
     LoginPageComponent,
     CourseCatalogPageComponent,
     MessagingCenterPageComponent,
-    AdviseesPageComponent
+    AdviseesPageComponent,
+    CourseSearchFormComponent
   ],
   imports: [
     BrowserModule,

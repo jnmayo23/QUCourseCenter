@@ -71,6 +71,15 @@ body {
   padding: 5px;
 }
 
+.main-form {
+  width: 75%;
+  margin-left: 19%;
+  margin-top: 5%;
+  background-color: #111;
+  border-radius: 8px;
+  padding: 5px;
+}
+
 /* Course card styling */
 .items {
   width: 95%;
