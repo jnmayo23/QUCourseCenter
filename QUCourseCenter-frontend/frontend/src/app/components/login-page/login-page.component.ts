@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/model/user';
+import { LoginserviceService } from 'src/app/service/loginservice.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,13 +10,15 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
 
+  user:User = new User();
+
   public togglePanel: String = "left-active";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginservice: LoginserviceService) { }
 
-  login() {
-    this.router.navigate(['home']);
-  }
+  // login() {
+  //   this.router.navigate(['home']);
+  // }
 
   loginPanelTrigger() {
     this.togglePanel = "left-active";
@@ -22,6 +26,16 @@ export class LoginPageComponent {
 
   signupPanelTrigger() {
     this.togglePanel = "right-active";
+  }
+
+  userLogin(){
+    console.log(this.user)
+    this.loginservice.loginUser(this.user).subscribe(data=>{
+      alert("login success")
+      this.router.navigate(['home']);
+    },error=>{
+      alert("login Failed Please Enter Correct Username and Password")
+    })
   }
 
 }

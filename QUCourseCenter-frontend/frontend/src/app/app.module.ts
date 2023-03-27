@@ -19,6 +19,7 @@ import { AdviseesPageComponent } from './components/advisees-page/advisees-page.
 import { HttpClientModule } from '@angular/common/http';
 import { courseService } from './service/course-service.service';
 import { CourseListComponent } from './components/course-list/course-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     BrowserModule,
     CommonModule,
+    FormsModule
   ],
   providers: [courseService],
   bootstrap: [AppComponent],
