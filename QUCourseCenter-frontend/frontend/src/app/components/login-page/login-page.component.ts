@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
+import { CreateAccountService } from 'src/app/service/create-account.service';
 import { LoginserviceService } from 'src/app/service/loginservice.service';
 
 @Component({
@@ -14,11 +15,8 @@ export class LoginPageComponent {
 
   public togglePanel: String = "left-active";
 
-  constructor(private router: Router, private loginservice: LoginserviceService) { }
-
-  // login() {
-  //   this.router.navigate(['home']);
-  // }
+  constructor(private router: Router, private loginservice: LoginserviceService, private createAccountService: CreateAccountService ) { }
+  
 
   loginPanelTrigger() {
     this.togglePanel = "left-active";
@@ -33,9 +31,19 @@ export class LoginPageComponent {
     this.loginservice.loginUser(this.user).subscribe(data=>{
       alert("login success")
       this.router.navigate(['home']);
+      localStorage.setItem('activeUser',this.user.username);
     },error=>{
-      alert("login Failed Please Enter Correct Username and Password")
+      alert("login Failed Please Make Sure Username and Password are Correct")
     })
+  }
+
+  userSignUp(){
+    console.log(this.user);
+    this.createAccountService.createUser(this.user).subscribe(data=>{
+      alert("Successfully Added User")
+      this.router.navigate(['home']);
+      localStorage.setItem('activeUser',this.user.username);
+    },error=> alert("User Not Added"));
   }
 
 }
