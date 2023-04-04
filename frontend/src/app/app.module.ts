@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { CourseCatalogPageComponent } from './components/course-catalog-page/cou
 import { MessagingCenterPageComponent } from './components/messaging-center-page/messaging-center-page.component';
 import { AdviseesPageComponent } from './components/advisees-page/advisees-page.component';
 import { CourseSearchFormComponent } from './components/course-catalog-page/course-search-form/course-search-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { courseService } from './service/course-service.service';
 
 @NgModule({
   declarations: [
@@ -33,11 +36,13 @@ import { CourseSearchFormComponent } from './components/course-catalog-page/cour
     CourseSearchFormComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    HttpClientModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    BrowserModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [courseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
