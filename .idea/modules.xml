@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/QUCourseCenter-frontend.iml" filepath="$PROJECT_DIR$/.idea/QUCourseCenter-frontend.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/QUCourseCenter.iml" filepath="$PROJECT_DIR$/QUCourseCenter.iml" />
+>>>>>>> 3c27125e8a4ce6919feb8171f636aef03dd17f97
     </modules>
   </component>
 </project>
