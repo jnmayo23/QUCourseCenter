@@ -20,4 +20,5 @@ describe('CourseCatalogPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
